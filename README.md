@@ -1,7 +1,6 @@
 # App structure
 
-// {}
-
+// {} []
 App 
 Header 
 Logo 
