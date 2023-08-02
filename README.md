@@ -1,7 +1,11 @@
 # App structure
+<<<<<<< HEAD
 
 // {}
+=======
+>>>>>>> dev
 
+// {} []
 App 
 Header 
 Logo 
