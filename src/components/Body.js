@@ -9,7 +9,6 @@ const Body = () => {
   // Whenever state variable update, react triggers a reconciliation cycle, it re-renders the component
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
-
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -65,10 +64,10 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredList = listOfRestaurants.filter(
+            const filteredRestaurant = listOfRestaurants.filter(
               (res) => res.info.avgRating >= 4.4);
 
-            setFilteredList(filteredList);
+            setFilteredList(filteredRestaurant);
           }}
         >
           TOP REATED RESTAURANT
