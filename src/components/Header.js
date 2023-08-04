@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
+import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
-  const [login, setLoging] = useState("Login");
+  const [btnNameReact, setBtnNameReact] = useState("Login");
 
   return (
     <div className="header">
@@ -18,10 +17,12 @@ const Header = () => {
           <button
             className="login"
             onClick={() => {
-              login === "Login" ? setLoging("Logout") : setLoging("Login");
+              btnNameReact === "Login"
+                ? setBtnNameReact("Logout")
+                : setBtnNameReact("Login");
             }}
           >
-            {login}
+            {btnNameReact}
           </button>
         </ul>
       </div>

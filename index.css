@@ -1,12 +1,8 @@
 .header {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between ;
   margin: 10px;
-  border: 1px solid #f0f0f0;
-}
-
-.search {
   border: 1px solid #f0f0f0;
 }
 
@@ -24,13 +20,7 @@
   margin: 15px;
 }
 
-.login {
-  margin: 15px;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.top-rated-filter-btn{
+.login{
   margin: 15px;
   cursor: pointer;
   font-size: 15px;
@@ -62,7 +52,7 @@
   flex-wrap: wrap;
 }
 
-.shimmer-card {
+.shimmer-card{
   width: 200px;
   height: 400px;
   padding: 5px;
@@ -70,10 +60,10 @@
   background-color: #f0f0f0;
 }
 
-.filter {
-  font-family: Arial, Helvetica, sans-serif;
+.filter{
+  font-family:Arial, Helvetica, sans-serif;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between ;
   margin: 10px;
 }
 
