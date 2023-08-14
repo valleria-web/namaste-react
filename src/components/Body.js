@@ -8,8 +8,7 @@ const Body = () => {
   //Local State Variable - Super powerful variable
   // Whenever state variable update, react triggers a reconciliation cycle, it re-renders the component
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
-  const [filteredList, setFilteredList] = useState([]);
-
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -27,7 +26,7 @@ const Body = () => {
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
-    setFilteredList(
+    setFilteredRestaurant(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
@@ -47,35 +46,38 @@ const Body = () => {
               setSearchText(e.target.value);
             }}
           />
-          <button
+          <button 
             onClick={() => {
               //Filter the restaurant cards and update UI
               // searchText
-
-              const filteredList = listOfRestaurants.filter((res) =>
+              console.log(searchText)
+              const search = filteredRestaurant.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
-
-              setFilteredList(filteredList);
+              setListOfRestaurants(search);
             }}
           >
             Search
           </button>
         </div>
+    
         <button
+          //Filter Top Restaurant is working =)
           className="filter-btn"
           onClick={() => {
-            const filteredList = listOfRestaurants.filter(
-              (res) => res.info.avgRating >= 4.4);
+            console.log("btn clicked");
+            const filtered = filteredRestaurant.filter(
+              (res) => res.info.avgRating >= 4.4
+            );
 
-            setFilteredList(filteredList);
+            setListOfRestaurants(filtered);
           }}
         >
-          TOP REATED RESTAURANT
+          Top Rated Restaurant
         </button>
       </div>
       <div className="rest-card-container">
-        {filteredList.map((restaurant) => (
+        {listOfRestaurants.map((restaurant) => (
           <Card key={restaurant.info.id} restData={restaurant} />
         ))}
       </div>
